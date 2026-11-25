@@ -64,12 +64,14 @@
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
             gap: 20px;
         }
         
         .portal-block {
-            aspect-ratio: 1/1;
+            display: flex;
+            min-width: 0;
+            padding: 5px;
             border: 3px solid #ffffff;
             border-radius: 10px;
             overflow: hidden;
@@ -78,20 +80,26 @@
                         inset 0 0 15px rgba(0, 204, 255, 0.4);
         }
         
-        .portal-block:nth-child(1) {
+        .portal-foodgrain {
             background: linear-gradient(135deg, #6600cc, #9900ff);
         }
         
-        .portal-block:nth-child(2) {
+        .portal-brainrot {
             background: linear-gradient(135deg, #ff0066, #ff6600);
+        }
+
+        .portal-sekret {
+            background: linear-gradient(135deg, #008844, #00ff99);
+        }
+
+        .portal-illicit {
+            background: linear-gradient(135deg, #cc8800, #ffee00);
         }
         
         .portal-inner {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
+            position: relative;
+            flex: 1;
+            min-width: 0;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 5px;
             padding: 15px;
@@ -103,6 +111,8 @@
         }
         
         .portal-title {
+            max-width: 100%;
+            overflow-wrap: anywhere;
             font-family: "Arial Black", "Impact", sans-serif;
             font-size: 1.8rem;
             color: #ffffff;
@@ -110,7 +120,7 @@
             margin-bottom: 10px;
             text-shadow: 0 0 5px #00ccff, 0 0 10px #00ccff;
         }
-        
+
         .portal-desc {
             font-family: "Verdana", sans-serif;
             font-size: 0.9rem;
@@ -229,16 +239,7 @@
         
         <main>
             <div class="grid">
-                <div class="portal-block">
-                    <div class="cyber-grid"></div>
-                    <div class="portal-inner">
-                        <h2 class="portal-title">PROJEKT_BETA_0002 FOODGRAIN WORLD MAP</h2>
-                        <p class="portal-desc">Yeah. Long ago humans got their food from living creatures that lived on dirt. This is a map that shows how these antiquated eating habits originated and where on the ancient map of Earth</br>  File size: 764K.</p>
-                        <a href="https://grainmap.vercel.app" class="portal-button" target="_blank">ENTER <span class="blink">_</span></a>
-                    </div>
-                </div>
-                
-                <div class="portal-block">
+                <div class="portal-block portal-brainrot">
                     <div class="cyber-grid"></div>
                     <div class="portal-inner">
                         <h2 class="portal-title">PROJEKT_0001  </br>ISLAND BRAINROT</h2>
@@ -246,6 +247,34 @@
                         <a href="https://tintedfireglass.github.io/brainrot/" class="portal-button" target="_blank">ACCESS <span class="blink">_</span></a>
                     </div>
                 </div>
+
+                <div class="portal-block portal-sekret portal-expanded">
+                    <div class="cyber-grid"></div>
+                    <div class="portal-inner">
+                        <h2 class="portal-title">SEKRET_DATA_0923</h2>
+                        <p class="portal-desc">There were small flying balls of meat back in the day. this is a database from a secret nuclear bunker in the southern atlantic ocean about such creatures. Beware! This is a spotify rewind inspired tool for ebird profiles.<br>Signal frequency: 1420 MHz.</p>
+                        <a href="https://tintedfireglass.github.io/eBird_rewind/" class="portal-button" target="_blank" rel="noopener noreferrer">EXPLORE <span class="blink">_</span></a>
+                    </div>
+                </div>
+
+                <div class="portal-block portal-illicit portal-expanded">
+                    <div class="cyber-grid"></div>
+                    <div class="portal-inner">
+                        <h2 class="portal-title">ILLICIT_MEDIA_NSFW_2099</h2>
+                        <p class="portal-desc">This is what people consumed back in the day? People loved each other like this? Or was this just an imaginary story made up by an author in ancient times?&#x20;<br>(Sesbian Lex wattpad short :p )<br>Archive status: UNCENSORED.</p>
+                        <a href="https://www.wattpad.com/1562061806-teasing-through-the-laces-%F0%9F%98%8B" class="portal-button" target="_blank" rel="noopener noreferrer">READ <span class="blink">_</span></a>
+                    </div>
+                </div>
+
+                <div class="portal-block portal-foodgrain">
+                    <div class="cyber-grid"></div>
+                    <div class="portal-inner">
+                        <h2 class="portal-title">PROJEKT_BETA_0002 FOODGRAIN WORLD MAP</h2>
+                        <p class="portal-desc">Yeah. Long ago humans got their food from living creatures that lived on dirt. This is a map that shows how these antiquated eating habits originated and where on the ancient map of Earth</br>  File size: 764K.</p>
+                        <a href="https://grainmap.vercel.app" class="portal-button" target="_blank">ENTER <span class="blink">_</span></a>
+                    </div>
+                </div>
+                <!-- Append future project panels here. -->
             </div>
         </main>
         
